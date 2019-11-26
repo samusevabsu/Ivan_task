@@ -44,13 +44,17 @@ function everything(arr) {
     return finish;
 }
 
-let arr = [1, 2, 3, -4];
-let result = arr.map(function (item) {
-    if (item < 0) {
-        let negotive = item * item;
-        return negotive;
-    } else {
-        let positive = item * 3;
-        return positive;
-    }
-});
+function mapper(arr) {
+    let arre = [1, 2, 3, -4];
+    let result = arr.map(function (item) {
+        if (item < 0) {
+            let negotive = item * item;
+            return negotive;
+        } else {
+            let positive = item * 3;
+            return positive;
+        }
+    }); 
+    return result;
+}
+mapper([1, 2, -4]);
