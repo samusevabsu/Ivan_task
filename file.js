@@ -41,5 +41,16 @@ function everything(arr) {
         mi: minim,
         ma: maxim,
     };
-     return finish;
+    return finish;
 }
+
+let arr = [1, 2, 3, -4];
+let result = arr.map(function (item) {
+    if (item < 0) {
+        let negotive = item * item;
+        return negotive;
+    } else {
+        let positive = item * 3;
+        return positive;
+    }
+});
