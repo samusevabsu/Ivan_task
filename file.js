@@ -54,7 +54,51 @@ function mapper(arr) {
             let positive = item * 3;
             return positive;
         }
-    }); 
+    });
     return result;
 }
 mapper([1, 2, -4]);
+
+let arrew = [1, 2, -5, -6, 7];
+let withoutnegotive = arrew.filter(function (item) {
+    if (item > 0) {
+        return true;
+    } else {
+        return false;
+    };
+    return withoutnegotive;
+});
+
+
+function sumNegative(array) {
+    let result = array.reduce(function (previous, current) {
+        if (current > 0) {
+            return previous;
+        }
+
+        return previous + current;
+    }, 0);
+    return result;
+};
+
+function sumPositive(array) {
+    let result = array.reduce(function (previous, current) {
+        if (current < 0) {
+            return previous;
+        }
+
+        return previous + current;
+    }, 0);
+    return result;
+};
+
+function positiveNegativeAver(arr) {
+    let positive = sumPositive(arr);
+    let negative = sumNegative(arr);
+    let property = {
+        pos: positive,
+        neg: negative,
+        av: aver,
+    };
+    return property;
+}
