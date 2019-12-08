@@ -1,31 +1,16 @@
-function sumNegative(array) {
-    let result = array.reduce(function (previous, current) {
-        if (current > 0) {
-            return previous;
-        }
-
-        return previous + current;
-    }, 0);
-    return result;
-};
-
-function sumPositive(array) {
-    let result = array.reduce(function (previous, current) {
-        if (current < 0) {
-            return previous;
-        }
-
-        return previous + current;
-    }, 0);
-    return result;
-};
-
-function positiveNegativeAver(arr) {
-    let positive = sumPositive(arr);
-    let negative = sumNegative(arr);
-    let property = {
-        pos: positive,
-        neg: negative,
+function sumNegativePositive(array) {
+    let object = {
+        pos: 0,
+        neg: 0
     };
-    return property;
-}
+    let result = array.reduce(function (object, currentElement) {
+        if (currentElement > 0) {
+            object.pos = object.pos + currentElement;
+            return object;
+        } else {
+            object.neg = object.neg + currentElement;
+            return object;
+        }
+    }, object);
+    return result;
+};
